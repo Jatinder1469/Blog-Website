@@ -1,0 +1,42 @@
+<%- include("../partials/header") %>
+<%- include("../partials/navbar") %>
+
+
+<div class="container" style="margin-top:8rem;">
+
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card" style="width: 30rem;">
+          <img src="<%= blog.img %>" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><%= blog.title %></h5>
+            <p class="card-text"><%= blog.text %></p>
+            <h5 class="card-title"> <%= blog.author %></h5>
+              
+            
+           
+          
+  
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <h2>Leave a Review</h2>
+        <form method="POST" action="/blogs/<%= blog._id %>/review">
+          <div class="mb-3">
+            <label class="form-label" for="body">Review</label>
+            <textarea class="form-control" name="review[body]" id="body" cols="30" rows="4"></textarea>
+          </div>
+
+          <button class="btn btn-success">Submit</button>
+
+        </form>
+        </div>
+
+</div>
+
+
+
+
+<%- include("../partials/footer") %>

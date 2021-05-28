@@ -1,0 +1,33 @@
+<%- include("../partials/header") %>
+<%- include("../partials/navbar") %>
+
+<div class="container" style="margin-top:5rem;width:60%;">
+    <h1>Edit Blog</h1>
+    
+    <form method="POST" action="/blogs/<%=blog._id%>?_method=PATCH" >
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" class="form-control" id="title" name="blog[title]" placeholder="Blog Title" value="<%= blog.tile %>">
+          
+        </div>
+        <div class="mb-3">
+          <label for="image" class="form-label">Image</label>
+          <input type="text" class="form-control" id="image" name="blog[img]" placeholder="Blog Image Link" value="<%= blog.img %>">
+        </div>
+        <div class="mb-3">
+            <label for="author" class="form-label">Author</label>
+            <input type="text" class="form-control" id="author" name="blog[author]" placeholder="Blog Author" value="<%= blog.author %>">
+          </div>
+          <div class="mb-3">
+            <label for="text" class="form-label">Text</label>
+            <textarea class="form-control" name="blog[text]" id="text" cols="30" rows="5"><%= blog.text %></textarea>
+          </div>
+       
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+
+
+
+
+<%- include("../partials/footer") %>
